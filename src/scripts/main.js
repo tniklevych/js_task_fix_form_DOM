@@ -2,14 +2,17 @@
 
 const allInputs = document.querySelectorAll('input');
 
+function camelToTitleCase(string) {
+  return string
+    .replace(/([A-Z])/g, ' $1')
+    .replace(/[A-Z]/g, (match) => match.toLowerCase())
+    .replace(/^./, (str) => str.toUpperCase());
+}
+
 allInputs.forEach((element) => {
   const labelName = document.createElement('label');
 
-  const elName = element.name.replace(/([a-z])([A-Z])/g, '$1 $2');
-  const formatedName = elName.replace(
-    /(\w)(\w+)/,
-    (match, p1, p2) => p1.toUpperCase() + p2,
-  );
+  const formatedName = camelToTitleCase(element.name);
 
   element.setAttribute('placeholder', formatedName);
 
