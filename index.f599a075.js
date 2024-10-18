@@ -1,0 +1,2 @@
+document.querySelectorAll("input").forEach(function(e){var t=document.createElement("label"),r=e.name.replace(/([A-Z])/g," $1").replace(/[A-Z]/g,function(e){return e.toLowerCase()}).replace(/^./,function(e){return e.toUpperCase()});e.setAttribute("placeholder",r),t.textContent=r,t.setAttribute("for",e.id),t.setAttribute("class","field-label"),e.before(t)});
+//# sourceMappingURL=index.f599a075.js.map
